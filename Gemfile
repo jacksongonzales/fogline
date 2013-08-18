@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '4.0.0'
-gem 'sqlite3'
+
+group :development do
+  gem 'sqlite3'
+end
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -16,6 +20,11 @@ end
 
 group :doc do
   gem 'sdoc', require: false
+end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
 
 # Use ActiveModel has_secure_password
