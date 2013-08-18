@@ -1,0 +1,159 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin translate3d($x: 0, $y: 0, $z: 0) {
+  -webkit-transform : translate3d($x, $y, $z);
+  -moz-transform : translate3d($x, $y, $z);
+  -ms-transform : translate3d($x, $y, $z);
+  -o-transform : translate3d($x, $y, $z);
+  transform : translate3d($x, $y, $z); 
+}
+
+@mixin transition($transition) {
+  -webkit-transition : $transition;
+  -moz-transition : $transition;
+  -ms-transition : $transition;
+  -o-transition : $transition;
+  transition : $transition; 
+}
+
+
+/* universal */
+
+html {
+/*  overflow-y: scroll; */
+}
+
+body {
+/*  padding-top: 60px; */
+}
+
+section {
+/*  overflow: auto; */
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+
+/* footer */
+
+#footer {
+  position: fixed;
+  height: 5.5%;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+  bottom: 0px;
+  background-color: black;
+  opacity: 0.5;
+  color: $grayLight;
+  ul {
+    list-style: none;
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+    li {
+      margin-top: 7px;
+    }
+  }
+  .right {
+    float: right;
+    padding-right: 20px;
+  }
+}
+
+/* modal */
+
+.btn {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+
+/* map canvas */
+
+#map-canvas {
+  height: 94.5%;
+  z-index: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* sidebar */
+
+.sideBar {
+  position: fixed;
+  width: 50em;
+  left: 98.5%;
+  top: 8%;
+  bottom: 13%;
+  background-color: $grayDark;
+  border-radius: 5px;
+  box-shadow: -2px 2px 2px #686868;
+  z-index: 1;
+  @include transition(left 1s);
+}
+
+.sideBarOut {
+  left: 55%;
+}
+
+#dragBar {
+  float: left;
+  position: absolute;
+  display: block;
+  height: 21px;
+  width: 15px;
+  border-top: 1px solid $grayLight;
+  border-right: 1px solid $grayLight;
+  border-bottom: 1px solid $grayLight;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  top: 45%;
+  cursor: pointer;
+}
+
+i {
+  @include transition(all 1s);
+}
+
+.iRotate {
+  -webkit-transform: rotate(180deg);
+}
+
+
+/* misc. */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
